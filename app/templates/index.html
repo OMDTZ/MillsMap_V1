@@ -1,0 +1,299 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+<body>
+<nav class="nav nav-tabs bg-light">
+  <button class="nav-link active text-info p-4"id="sidebarToggle">
+    <strong>Home</strong>
+  </button>
+  <button class="nav-link" id="filterToggle">
+    <strong>Filters and infographics</strong>
+  </button>
+  <button class="nav-link" id="howtoToggle">
+    <strong>How to use this page</strong>
+  </button>
+</nav>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-4 side-column" id="sidebar">
+                <div class="row">
+                    <div class="col-11 " >
+                        <div class="wrapper p-4">
+                            <nav >
+                                <div class="row">
+                                    <div class="col-35">
+                                        <img class="wfp-logo" src="static/static_figures/combined_logo.png" alt="tz_wfp-logo">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <h2>Nationwide Mills Census in Tanzania</h2>
+                                         <p> The World Food Programme (WFP) in Tanzania has funded OpenMap Development Tanzania (OMDTZ) to conduct a detailed mapping survey of mills across Tanzania and collect information about mills such as locations, distribution, capacity, fortifications, commodities milled by specific machines and other relevant information.
+                                             OMDTZ employed a community mapping approach by training community members of specific regions and districts to collect the above information, whereas over 1,000 community mappers were trained and collected more than 50,000 mills across the country.
+                                             This assignment was meant to create up-to-date and reliable data for thousands of small & medium scale mills as many Tanzanian households depend on every day for their maize meal forming 40% of household calories on average. The available data before the mapping was scattered across different wards and is infrequently updated. This information will help WFP and the associated partners such as the government of Tanzania to understand the assessment of nutrition and food security within the country and be able to create relative intervention as needed.
+                                             This map is interactive and will be updated over time to keep the information relevant and reliable.
+                                        </p>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h5>Created by <a href="https://www.omdtz.or.tz/">OMDTZ</a></h5>
+                                    </div>
+                                    <br>
+                                <br>
+                                    <hr>
+                                    <div>
+                                        <h4>The current number of mill sites:</h4>
+                                        <h4 id="millNumber"></h4>
+                                        <h4>The current number of machines:</h4>
+                                        <h4 id="machineNumber"></h4>
+                                    </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                    <div class="col-2 mt-4 margin-left-4 hide side-column" id="selects">
+                        <div style="clear: both; margin: 30px; float: left">
+                        <h4>Filters</h4>
+                        <strong class="select-title m-2">Region</strong>
+                        <div class="select" id="selectRegion">
+                        </div>
+                         <strong class="select-title m-2">District</strong>
+                        <div class="select" id="selectDistrict">
+                        </div>
+                        <strong class="select-title m-2">Owner type</strong>
+                        <div class="select" id="selectOwner">
+                        </div>
+                        <strong class="select-title m-2">Cereals and Tuber Milled</strong>
+                        <div class="select" id="selectGrain">
+                        </div>
+                        <strong class="select-title m-2">Processing Machine</strong>
+                        <div class="select" id="selectMillType">
+                        </div>
+                        <strong class="select-title m-2">Operational</strong>
+                        <div class="select" id="selectOperational">
+                        </div>
+                        <strong class="select-title m-2">Fortified Flour</strong>
+                        <div class="select" id="selectFortify">
+                        </div>
+                        <!--<strong class="select-title m-2">Fortifying standard</strong>
+                        <div class="select" id="selectFortifyStandard">
+                        </div>-->
+                        
+                        <strong class="select-title m-2">Energy source</strong>
+                        <div class="select" id="selectEnergySource">
+                        </div>
+                       <!--<strong class="select-title m-2">Non-operational reason</strong>
+                        <div class="select" id="selectNonOperationReason">
+                        </div>-->
+                        
+                        <button class="btn bg-warning p-3 m-2" id="resetFilters">Reset filters</button>
+                        <h4>Download data</h4>
+                            <div id="download-type" style="clear: both; float: left">
+                          <div><label><input type=radio name="operation" value="raw" checked="true">&nbsp;All data</label></div>
+                          <div><label><input type=radio name="operation" value="table">&nbsp;Filtered data</label></div>
+                        </div>
+                            <br>
+                        <div style="float: left">
+                          <button class="btn bg-info p-3 m-2" id="download">Download</button>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div id="infographics" class="hide col-4 figures side-column">
+                        <!--<div class="p-3">
+                            <h4  class="card-title text-center">Functional mills</h4>
+                            <div id="functionalMills" class="infographics"></div>
+                        </div>-->
+                        
+                        <div class="p-3">
+                            <h4  class="card-title text-center">Processing Machine</h4>
+                            <div id="millTypes" class="infographics"></div>
+                        </div>
+                        <div class="p-3">
+                            <h4  class="card-title text-center">Fortified Flour</h4>
+                            <div id="fortifiedFlour" class="infographics"></div>
+                        </div>
+                        <div class="p-3">
+                            <h4  class="card-title text-center">Cereals and Tuber Milled</h4>
+                            <div id="grainType" class="infographics"></div>
+                            <small>*Each machine can have multiple grain types</small>
+                        </div>
+
+                     </div>
+            <div class="col hide side-column" id="howto">
+                <div>
+                    <p m-5 p-5>
+
+                        <p>
+                            <strong>Filters</strong>
+                        </p>
+                        <p>
+                            In the second tab
+                            there are filters and infographics. When one zooms in on the map, the inforgraphics
+                            are changed accordingly. One can also change the filters from the select menus, the legends
+                            or by clicking
+                            the infographics themselves. To reset the filters, there is a button at the bottom for
+                            resetting.
+                        This includes also the zoom level of the map.
+                        </p>
+                        <p>
+                            <strong id="test" class="test">Downloading data</strong>
+                        </p>
+                        <p>
+                            At the bottom of the 'filters and infographics' -pages there is also
+                            a download button which can be set to download all the data,
+                            or the filtered data. Filtering here includes also the extent to which the map is zoomed,
+                            or which infographics have been used to filter the data.
+                        </p>
+                         <p>
+                            <strong> How to add new data </strong>
+                        </p>
+                        <p>
+                           <ol type="i">
+                                <li>Install ODK; Go to play store on your android phone download  and install OpenDataKit (ODK) application</li>
+                                <li>Open ODK, click configure with QR code then scan the code bellow</li>
+                                 <div class="col-9">
+                                    <img class="odk qr code" src="static/static_figures/odk_qr.png" alt="odk qr code">
+                                 </div>
+                                <li>Set your identity; Open ODK > setting > user > device  identity > form metadata then type your username, phone number and email address</li>
+                                <li>Open Your ODK application and you will find 5 options</li>
+                                    <ol type="i">
+                                        <li>Fill blank form</li>
+                                        <li>Edit saved form</li>
+                                        <li>Send Finalized form</li>
+                                        <li>View sent form</li>
+                                        <li>Delete saved form</li>
+                                   </ol>
+                                <li>In “Fill blank form” , you will find two forms; for Tanzania mainland and Zanzibar, select the form based on your location.</li>
+                                <li>Open form and you will find all the information you need to proceed with mapping</li>
+                                <li>Before start mapping, make sure you turn on location on your phone</li>
+                                <li>After adding all the attributes, use the “Send finalized form” option, select all the forms and send them</li>
+                                <li>After ~10 minutes, the new point will appear in the web map </li>
+                            </ol>
+                        </p>
+                    </p>
+                </div>
+            </div>
+            <div class="col hide side-column">
+                <h4>Machine details</h4>
+                <p id="machine_details"></p>
+                <div id="details_container"></div>
+            </div>
+
+        <div class="col-8 mt-3" id="mapbar">
+            <span class="ouro" id="spin">
+                <span class="left"><span class="anim"></span></span>
+                <span class="right"><span class="anim"></span></span>
+            </span>
+            <div id="mapid">
+            </div>
+            <p id="download-info" class="hide">Testing</p>
+
+</div>
+        </div>
+
+<!--            <div class="col-3 form-inline mb-3" id="filterbar">-->
+<!--                <h1>Filters</h1>-->
+<!--                <h3 id="menutitle">Mill owner</h3>-->
+<!--                    <div id="menuselect" class="block"></div>-->
+<!--                    {% for filterform_key in filter_options %}-->
+<!--                <label class="form-label btn btn-info btn-block" data-toggle="collapse" data-target="#{{ filterform_key }}">{{ filterform_key }}</label> <br>-->
+<!--                    <div id="{{ filterform_key }}" class="collapse">-->
+<!--                        {% for filterform_value in mill_filter_selection[filterform_key] %}-->
+<!--                            <div class="mb-3">-->
+<!--                                {% if choices_dict %}-->
+<!--                                    {% if filterform_key in choices_dict.keys() %}-->
+<!--                                        {% if filterform_value in choices_dict[filterform_key] %}-->
+<!--                                        <input class="form-check-input" type="checkbox" checked = 'True' name="{{ filterform_key }}, {{filterform_value }}" ></input>-->
+<!--                                        {% else %}-->
+<!--                                        <input class="form-check-input" type="checkbox" name="{{ filterform_key }}, {{filterform_value }}" ></input>-->
+<!--                                        {% endif %}-->
+<!--                                    {% else %}-->
+<!--                                        <input class="form-check-input" type="checkbox" name="{{ filterform_key }}, {{filterform_value }}" ></input>-->
+<!--                                    {% endif %}-->
+<!--                                {% else %}-->
+<!--                                <input class="form-check-input" type="checkbox" checked = 'True' name="{{ filterform_key }}, {{filterform_value }}" ></input>-->
+<!--                                {% endif %}-->
+<!--                                <label class="form-check-label" name={{ filterform_value }}>{{ filterform_value }}</label>-->
+<!--                            </div>-->
+<!--                        {% endfor %}-->
+<!--                    </div>-->
+<!--                    {% endfor %}-->
+<!--&lt;!&ndash;                     <h3>Machine filters</h3>&ndash;&gt;-->
+<!--                    <br>-->
+
+<!--            </div>-->
+        </div>
+
+    </div>
+
+</div>
+<!--    <div class="figures">-->
+<!--        <div class="row">-->
+<!--            <div class="col">-->
+<!--                <div class="p-3 mb-5 bg-white rounded">-->
+<!--                    <h3  class="card-title text-center">Functional mills</h3>-->
+<!--                    <div id="functionalMills" class="infographics"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col">-->
+<!--                <div class="p-3 mb-5 bg-white rounded">-->
+<!--                    <h3  class="card-title text-center">Mill types</h3>-->
+<!--                    <div id="millTypes" class="infographics"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col">-->
+<!--                <div class="p-3 mb-5 bg-white rounded">-->
+<!--                    <h3  class="card-title text-center">Energy source</h3>-->
+<!--                    <div id="energySource" class="infographics"></div>-->
+<!--                    <small>*Each machine can have multiple energy sources</small>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col">-->
+<!--                <div class="p-3 mb-5 bg-white rounded">-->
+<!--                    <h3  class="card-title text-center">Flour is fortified</h3>-->
+<!--                    <div id="fortifiedFlour" class="infographics"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <div class="p-3 mb-5 bg-white rounded">-->
+<!--                    <h3  class="card-title text-center">Mill owner</h3>-->
+<!--                    <div id="millOwner" class="infographics"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <div class="p-3 mb-5 bg-white rounded">-->
+<!--                    <h3  class="card-title text-center">Fortification standard</h3>-->
+<!--                    <div id="fortifiedStandard" class="infographics"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--             <div class="col">-->
+<!--                <div class="p-3 mb-5 bg-white rounded">-->
+<!--                    <h3  class="card-title text-center">Non operational reason</h3>-->
+<!--                    <div id="nonOperational" class="infographics mb-5"></div>-->
+<!--                    <small>*Each machine can have multiple reasons</small>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <div class="p-3 mb-5 bg-white rounded">-->
+<!--                    <h3  class="card-title text-center">Milled grain</h3>-->
+<!--                    <div id="grainType" class="infographics"></div>-->
+<!--                    <small>*Each machine can have multiple grain types</small>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+</div>
+
+
+    	<!--	Local javascript-->
+<script src="{{url_for('static', filename='js/index.js')}}"></script>
+</body>
+</html>
+
+{% endblock content %}

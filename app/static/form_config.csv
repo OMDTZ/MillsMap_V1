@@ -1,0 +1,11 @@
+projectId,formId,activityStatus,featureType,lastChecked,lastNumberRecordsMills,lastNumberRecordsMachines
+2,Tanzania_Mills_Mapping_Census_V_0.09,1,point,"time.struct_time(tm_year=2022, tm_mon=11, tm_mday=12, tm_hour=8, tm_min=27, tm_sec=23, tm_wday=5, tm_yday=316, tm_isdst=0)",215,370
+2,Tanzania_Mills_Mapping_Census_V_0.02,0,point,"time.struct_time(tm_year=2022, tm_mon=6, tm_mday=24, tm_hour=7, tm_min=21, tm_sec=9, tm_wday=4, tm_yday=175, tm_isdst=0)",1405,2082
+2,Tanzania_Mills_Mapping_Census_V_0.04,0,point,"time.struct_time(tm_year=2022, tm_mon=6, tm_mday=24, tm_hour=7, tm_min=21, tm_sec=10, tm_wday=4, tm_yday=175, tm_isdst=0)",0,0
+2,Tanzania_Mills_Mapping_Census_V_0.05,0,point,"time.struct_time(tm_year=2022, tm_mon=6, tm_mday=24, tm_hour=7, tm_min=21, tm_sec=31, tm_wday=4, tm_yday=175, tm_isdst=0)",14196,21436
+2,Tanzania_Mills_Mapping_Census_V_0.06,0,point,"time.struct_time(tm_year=2022, tm_mon=6, tm_mday=24, tm_hour=7, tm_min=21, tm_sec=50, tm_wday=4, tm_yday=175, tm_isdst=0)",11691,20926
+2,Tanzania_Mills_Mapping_Census_V_0.07,1,point,"time.struct_time(tm_year=2022, tm_mon=11, tm_mday=12, tm_hour=8, tm_min=27, tm_sec=23, tm_wday=5, tm_yday=316, tm_isdst=0)",5265,9390
+2,Tanzania_Mills_Mapping_Census_V_0.08,1,point,"time.struct_time(tm_year=2022, tm_mon=11, tm_mday=12, tm_hour=8, tm_min=27, tm_sec=23, tm_wday=5, tm_yday=316, tm_isdst=0)",368,737
+2,Tanzania_Mills_Mapping_Census_V_01,,point,"time.struct_time(tm_year=2022, tm_mon=6, tm_mday=24, tm_hour=7, tm_min=22, tm_sec=5, tm_wday=4, tm_yday=175, tm_isdst=0)",581,857
+2,Zanzibar_Mills_Mapping_Census_Updating_V_0.11,,point,"time.struct_time(tm_year=2022, tm_mon=6, tm_mday=24, tm_hour=7, tm_min=22, tm_sec=6, tm_wday=4, tm_yday=175, tm_isdst=0)",0,0
+2,Tanzania_Mainland_Mills_Mapping_Census_Updating_V_0.12,,point,"time.struct_time(tm_year=2022, tm_mon=6, tm_mday=24, tm_hour=7, tm_min=22, tm_sec=7, tm_wday=4, tm_yday=175, tm_isdst=0)",0,0

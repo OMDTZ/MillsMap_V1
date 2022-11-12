@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve millsmap
+After=network.target
+
+[Service]
+User=millsmap
+Group=www-data
+WorkingDirectory=/home/millsmap/MillsMap
+Environment="PATH=/home/millsmap/MillsMap/venv/bin"
+ExecStart=/home/millsmap/MillsMap/venv/bin/uwsgi --ini millsmap.ini
+
+[Install]
+WantedBy=multi-user.target
