@@ -157,6 +157,7 @@ pip install click
 pip install config
 pip install cycler
 pip install time
+pip install atexit
 pip install Pillow
 pip install geojson
 pip install wheel
