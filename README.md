@@ -100,10 +100,17 @@ For Web-map, you are needed to prepare the following
     ```
     - docker-compose up -d
     ``` 
-- Logging into the server
+- Logging into the server and adding user
   - Ensure that you are in the central folder on your server. 
-  - Then, type docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-create, substituting your email address as appropriate. Press Enter, and you will be asked for a password for this new account.
-  - The previous step created an account but did not make it an administrator. To do this, type docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-promote Enter.
+  - Adding users ( Substituting your email address as appropriate. Press Enter, and you will be asked for a password for this new account.)
+  ```
+  - docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-create
+  ```
+  - Make the user as admin 
+  ```
+  docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-promote
+  ```
+  
   - You are done for now, but if you ever lose track of your password, you can always reset it by typing docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-set-password. As with account creation, you will be prompted for a new password after you press Enter.
 
 ## For more information about server set up
