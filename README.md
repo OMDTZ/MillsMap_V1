@@ -24,7 +24,7 @@ For Web-map, you are needed to prepare the following
   - Choose the size of droplets; basic, regular with SSD the smallest available option
   - Choose Authentication Method; for more security, we recommend ssh but you can also opt password
   - Rename and create the droplets.
-![Alt text](/app/static/static_figures/droplets.png?raw=true "Title")
+![Alt text](/app/static/static_figures/doplets.png?raw=true "Title")
 
 - Connecting Domain
   - Buy a domain from your provider eg www.millmaps.org
