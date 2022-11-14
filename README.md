@@ -146,10 +146,10 @@ ufw disable
   - Follow instructions. It needs the domain name, and your email so that LetsEncrypt can inform you when your certificate is expiring.
 
 - Note: 
-  - To Change the odk central server: /app/config.py
-  - To track Submission Files: /app/submission_files
+  - To change an odk central server: /app/config.py
+  - To track submitted  files: /app/submission_files
   - Mills picture: /app/static/figures/
-  - Adding forms to be downloaded: /app/static/form_config.csv
+  - To add new form: /app/static/form_config.csv
 
 ## How to update the Map  - Using ODK
 Make sure you're using the server linked with webmap during the webmap installation stage 
