@@ -7,7 +7,7 @@ The online map is composed of two main components, which are
 - Data collection server (www.omdtz-data.org)
 - Web-map  (www.millmaps.org)
 
-### Data collection server (www.omdtz-data.org)
+### Data collection server Deployment
 For server deployment, you are needed to prepare the following 
 - Domain name. In our case, we bought a domain from https://www.namecheap.com/
 - Server for hosting, in our case we used https://cloud.digitalocean.com/ which cost $ 24 /month, and specification of 4GB of Ram / 2 CPUs, 80 GB SSD Disk 4 TB transfer. We also added the external 150GB SSD to support pictures and data hosting but for now we can aim for minimal specifications because we are not expecting a large amount of data to be uploaded.
@@ -24,6 +24,24 @@ For Web-map, you are needed to prepare the following
   - Choose the size of droplets; basic, regular with SSD the smallest available option
   - Choose Authentication Method; for more security, we recommend ssh but you can also opt password
   - Rename and create the droplets.
+- Connecting Domain
+  - Buy a domain from your provider eg www.millmaps.org
+  - In digital ocean 
+    - Add the domain name you bought eg millmaps.org
+    - Add CNAME as *
+    - Copy all the name servers which are 
+      - ns1.digitalocean.com. 
+      - Ns2.digitalocean.com.
+      - Ns3.digitalocean.com.
+  - From Domain name service provides. I.e Namecheap
+    - Click manage, on the right or the domain you just bought
+    - Navigate to name servers, change the section to custom DNS then add all the nameservers copied from the digital ocean which are 
+      - ns1.digitalocean.com. 
+      - Ns2.digitalocean.com.
+      - Ns3.digitalocean.com.
+*** The whole process above can take up to 24 hr to reflect ***
+
+
 
 ## Data colection infrastructure 
 - Set up Server, 
