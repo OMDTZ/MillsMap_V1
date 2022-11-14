@@ -123,11 +123,12 @@ ODK central used and was deployed in Digital ocean by using the following proced
 
 ### Cloud deployment
 - Create a Digital Ocean droplet (or other server on whatever infrastructure you prefer), and associate a domain name with it. Either disable the UFW firewall or poke the appropriate holes in it for nginx and ssh.
-- Create a user called ```millsmap``` with sudo privileges, 
-- Modify firewall system by running
+ - Modify firewall system by running
 ```
 ufw disable 
 ```
+ - Create a user called ```millsmap``` with sudo privileges, 
+
 ```
   sudo adduser millsmap    # Enter password, name, etc
   sudo usermod -aG sudo millsmap
