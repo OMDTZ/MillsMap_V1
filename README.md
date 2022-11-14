@@ -142,7 +142,10 @@ ufw disable
  ```
 - ```cd MillsMap```.
 - You'll need a file called ```secret_tokens.json``` that contains a keys "email" and "password" that contain the username and password for an ODK Central server containing your mill map data.
-- Run the installation script with ```script/setup.sh```.
+- Run the installation script with 
+  ```
+  script/setup.sh
+  ```
   - Follow instructions. It needs the domain name, and your email so that LetsEncrypt can inform you when your certificate is expiring.
 
 - Note: 
