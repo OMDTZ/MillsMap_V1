@@ -78,7 +78,7 @@ For Web-map, you are needed to prepare the following
   ```
   - Copy the template so as you can be able to edit it
   ```
-   mv .env.template .env
+  mv .env.template .env
   ```
   - The edit the file and add domain and emails as follows
     - Type nano .env the text editor will be launched and
