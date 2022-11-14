@@ -29,8 +29,8 @@ For Web-map, you are needed to prepare the following
 - Connecting Domain
   - Buy a domain from your provider eg www.millmaps.org
   - In digital ocean 
-![Alt text](/app/static/static_figures/domain.png?raw=true "Title")
     - Right-click on the 3 dots after the droplets you created
+![Alt text](/app/static/static_figures/domain.png?raw=true "Title")
     - Click add domain
       - Add the domain name you bought eg millmaps.org
       - Add CNAME as *
@@ -45,7 +45,7 @@ For Web-map, you are needed to prepare the following
       - Ns1.digitalocean.com. 
       - Ns2.digitalocean.com.
       - Ns3.digitalocean.com.
-![Alt text](/app/static/static_figures/domain-name.png?raw=true "Title")
+![Alt text](/app/static/static_figures/Domain_digital ocean.png?raw=true "Title")
       
 ***The whole process above can take up to 24 hr to reflect***
 
