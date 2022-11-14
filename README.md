@@ -3,27 +3,29 @@
 This repo queries odk central server and updates a webmap automatically. Currently specific to a project in Tanzania funded by The World Food Programme (WFP) and conducted by OpenMap Development Tanzania (OMDTZ).
 
 ## Infrastructure set-up
-The online map is composed of two main components, which are 
+The map is composed of two main components, which are 
 - Data collection server (www.omdtz-data.org)
 - Web-map  (www.millmaps.org)
 
-### Data collection server Deployment
+### Requirements for deploying data collection server
 For server deployment, you are needed to prepare the following 
 - Domain name. In our case, we bought a domain from https://www.namecheap.com/
 - Server for hosting, in our case we used https://cloud.digitalocean.com/ which cost $ 24 /month, and specification of 4GB of Ram / 2 CPUs, 80 GB SSD Disk 4 TB transfer. We also added the external 150GB SSD to support pictures and data hosting but for now we can aim for minimal specifications because we are not expecting a large amount of data to be uploaded.
 
-### Web map deployment
+### Requirements for deploying Web-map
 For Web-map, you are needed to prepare the following 
 - Domain name, because it uses let’s encrypt for the SSL, you should provide the domain in the very early stage. In our case, we bought a domain from https://www.namecheap.com/
 - Server for hosting, in our case we used https://cloud.digitalocean.com/. With specifications of 1GB RAM / 1CPU and 25 GB SSD Disk. For the local infrastructure, you can create virtual machines.
 
-### Deploying Data collection server
+### Steps for deploying Data collection server
 - Creating new droplets
   - Creating an account in the digital ocean
   - Launch a droplet; At the very top, under Choose an image, switch to the Marketplace tab and select the Docker option. The docker version does not matter, and the system will run on ubuntu 20.04 or higher. 
   - Choose the size of droplets; basic, regular with SSD the smallest available option
   - Choose Authentication Method; for more security, we recommend ssh but you can also opt password
   - Rename and create the droplets.
+![Alt text](relative/app/static/static_figures/droplets.png?raw=true "Title")
+
 - Connecting Domain
   - Buy a domain from your provider eg www.millmaps.org
   - In digital ocean 
