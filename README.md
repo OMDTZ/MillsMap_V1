@@ -29,18 +29,23 @@ For Web-map, you are needed to prepare the following
 - Connecting Domain
   - Buy a domain from your provider eg www.millmaps.org
   - In digital ocean 
-    - Add the domain name you bought eg millmaps.org
-    - Add CNAME as *
-    - Copy all the name servers which are 
-      - ns1.digitalocean.com. 
-      - Ns2.digitalocean.com.
-      - Ns3.digitalocean.com.
+![Alt text](/app/static/static_figures/domain.png?raw=true "Title")
+    - Right-click on the 3 dots after the droplets you created
+    - Click add domain
+      - Add the domain name you bought eg millmaps.org
+      - Add CNAME as *
+      - Copy all the name servers which are 
+        - ns1.digitalocean.com. 
+        - Ns2.digitalocean.com.
+        - Ns3.digitalocean.com.
+![Alt text](/app/static/static_figures/domain-ocean.png?raw=true "Title")
   - From Domain name service provides. I.e Namecheap
     - Click manage, on the right or the domain you just bought
     - Navigate to name servers, change the section to custom DNS then add all the nameservers copied from the digital ocean which are 
       - Ns1.digitalocean.com. 
       - Ns2.digitalocean.com.
       - Ns3.digitalocean.com.
+![Alt text](/app/static/static_figures/domain-name.png?raw=true "Title")
       
 ***The whole process above can take up to 24 hr to reflect***
 
