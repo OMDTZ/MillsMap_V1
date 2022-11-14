@@ -36,18 +36,43 @@ For Web-map, you are needed to prepare the following
   - From Domain name service provides. I.e Namecheap
     - Click manage, on the right or the domain you just bought
     - Navigate to name servers, change the section to custom DNS then add all the nameservers copied from the digital ocean which are 
-      - ns1.digitalocean.com. 
+      - Ns1.digitalocean.com. 
       - Ns2.digitalocean.com.
       - Ns3.digitalocean.com.
-*** The whole process above can take up to 24 hr to reflect ***
+      
+***The whole process above can take up to 24 hr to reflect***
 
+- Installing Data collection server (ODK central)
+  - From your terminal, try to ssh to the server; you can use the IP address provided, and if the domain has already been reflected you can use it.
+  - Then upgrade the server
+    - sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    - sudo chmod +x /usr/local/bin/docker-compose
+    - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  - Download the application; git clone https://github.com/getodk/central
+  - Add the missing components, and make sure you are in the central directory and paste the following; git submodule update -i
+- Add domain and emails
+  - Type nano .env the text editor will be launched and
+    - #Use fully qualified domain names. Set to DOMAIN=local if SSL_TYPE=selfsign.
+    DOMAIN=omdtz-data.org (added domain name)
+    - #Used for Let's Encrypt expiration emails and Enketo technical support emails
+    SYSADMIN_EMAIL=iddichazua6@gmail.com (added email)
+    - #Options: letsencrypt, customssl, upstream, selfsign
+    SSL_TYPE=letsencrypt
+    - #Do not change if using SSL_TYPE=letsencrypt
+    - HTTP_PORT=80
+    - HTTPS_PORT=443
+  - Start installing the server by typing; docker-compose build
+  - The previous task will take time after it is completed start the server by typing; docker-compose up -d
+- Logging into the server
+  - Ensure that you are in the central folder on your server. 
+  - Then, type docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-create, substituting your email address as appropriate. Press Enter, and you will be asked for a password for this new account.
+  - The previous step created an account but did not make it an administrator. To do this, type docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-promote Enter.
+  - You are done for now, but if you ever lose track of your password, you can always reset it by typing docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-set-password. As with account creation, you will be prompted for a new password after you press Enter.
 
-
-## Data colection infrastructure 
+## For more information about server set up
 - Set up Server, 
 ODK central used and was deployed in Digital ocean by using the following procedures in this link https://docs.getodk.org/central-install-digital-ocean/ 
 - Creating digital questionnaire, this was done by guidance from this link; https://xlsform.org/en/
-
 
 
 
