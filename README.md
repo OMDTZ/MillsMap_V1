@@ -78,7 +78,7 @@ For Web-map, you are needed to prepare the following
   ```
   - Copy the template so as you can be able to edit it
   ```
-  - mv .env.template .env
+   mv .env.template .env
   ```
   - The edit the file and add domain and emails as follows
     - Type nano .env the text editor will be launched and
@@ -96,15 +96,15 @@ For Web-map, you are needed to prepare the following
     ```
     docker-compose build
     ```
-    - The previous task will take time after it is completed start the server by typing; 
+    - Start the server; 
     ```
-    - docker-compose up -d
+    docker-compose up -d
     ``` 
 - Logging into the server and adding user
   - Ensure that you are in the central folder on your server. 
   - Adding users ( Substituting your email address as appropriate. Press Enter, and you will be asked for a password for this new account.)
   ```
-  - docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-create
+  docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-create
   ```
   - Make the user as admin 
   ```
