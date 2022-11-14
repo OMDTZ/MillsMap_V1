@@ -124,7 +124,14 @@ ODK central used and was deployed in Digital ocean by using the following proced
 
 ### Cloud deployment
 - Create a Digital Ocean droplet (or other server on whatever infrastructure you prefer), and associate a domain name with it. Either disable the UFW firewall or poke the appropriate holes in it for nginx and ssh.
-- Create a user called ```millsmap``` with sudo privileges.
+- Create a user called ```millsmap``` with sudo privileges, 
+```
+  sudo adduser millsmap    # Enter password, name, etc
+  sudo usermod -aG sudo millsmap
+  sudo mkdir /home/millsmap/.ssh
+  sudo cp .ssh/authorized_keys /home/millsmap/.ssh/
+  sudo chown hot-admin /home/millsmap/.ssh/authorized_keys
+```
 - From the ```millsmap``` user account, clone this repo. Step into it with ```cd MillsMap```.
 - You'll need a file called ```secret_tokens.json``` that contains a keys "email" and "password" that contain the username and password for an ODK Central server containing your mill map data.
 - Run the installation script with ```script/setup.sh```.
