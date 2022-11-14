@@ -51,26 +51,30 @@ For Web-map, you are needed to prepare the following
 
 - Installing Data collection server (ODK central)
   - From your terminal, ssh to the server; you can use the IP address provided and username as root. If the domain has already been reflected you can use it.
+  - Start by updating and upgrading the OS 
   - Then upgrade the server
     - sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     - sudo chmod +x /usr/local/bin/docker-compose
     - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  - Start up docker run systemctl enable docker
+  - Modify system firewall ufw disable and you it will prompt "Firewall stopped and disabled on system startup"
   - Download the application; git clone https://github.com/getodk/central
   - Add the missing components, and make sure you are in the central directory and paste the following; git submodule update -i
-- Add domain and emails
-  - Type nano .env the text editor will be launched and
-    - #Use fully qualified domain names. Set to DOMAIN=local if SSL_TYPE=selfsign.
-    DOMAIN=omdtz-data.org (added domain name)
-    - #Used for Let's Encrypt expiration emails and Enketo technical support emails
-    SYSADMIN_EMAIL=iddichazua6@gmail.com (added email)
-    - #Options: letsencrypt, customssl, upstream, selfsign
-    SSL_TYPE=letsencrypt
-    - #Do not change if using SSL_TYPE=letsencrypt
-    - HTTP_PORT=80
-    - HTTPS_PORT=443
-![Alt text](/app/static/static_figures/server.png?raw=true "Title")
-  - Start installing the server by typing; docker-compose build
-  - The previous task will take time after it is completed start the server by typing; docker-compose up -d
+  - Copy the template mv .env.template .env
+  - Add domain and emails
+    - Type nano .env the text editor will be launched and
+      - #Use fully qualified domain names. Set to DOMAIN=local if SSL_TYPE=selfsign.
+      DOMAIN=omdtz-data.org (added domain name)
+      - #Used for Let's Encrypt expiration emails and Enketo technical support emails
+      SYSADMIN_EMAIL=iddichazua6@gmail.com (added email)
+      - #Options: letsencrypt, customssl, upstream, selfsign
+      SSL_TYPE=letsencrypt
+      - #Do not change if using SSL_TYPE=letsencrypt
+      - HTTP_PORT=80
+      - HTTPS_PORT=443
+  ![Alt text](/app/static/static_figures/server.png?raw=true "Title")
+    - Start installing the server by typing; docker-compose build
+    - The previous task will take time after it is completed start the server by typing; docker-compose up -d
 - Logging into the server
   - Ensure that you are in the central folder on your server. 
   - Then, type docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-create, substituting your email address as appropriate. Press Enter, and you will be asked for a password for this new account.
