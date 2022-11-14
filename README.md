@@ -54,16 +54,33 @@ For Web-map, you are needed to prepare the following
   - Start by updating and upgrading the OS 
   - Then upgrade the server
     ```
-    - sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    - sudo chmod +x /usr/local/bin/docker-compose
-    - sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     ```
-  - Start up docker run systemctl enable docker
-  - Modify system firewall ufw disable and you it will prompt "Firewall stopped and disabled on system startup"
-  - Download the application; git clone https://github.com/getodk/central
-  - Add the missing components, and make sure you are in the central directory and paste the following; git submodule update -i
-  - Copy the template mv .env.template .env
-  - Add domain and emails
+  - Start up the docker by run 
+  ```
+  systemctl enable docker
+  ```
+  - Modify system firewall by running
+  ```
+  ufw disable 
+  ```
+   and you it will prompt "Firewall stopped and disabled on system startup"
+  - Download the application; 
+  ```
+  git clone https://github.com/getodk/central
+  ```
+  - Navigate to central directory by typing cd central
+  - Add the missing components, and make sure you are in the central directory and paste the following; 
+  ```
+  git submodule update -i
+  ```
+  - Copy the template so as you can be able to edit it
+  ```
+  - mv .env.template .env
+  ```
+  - The edit the file and add domain and emails as follows
     - Type nano .env the text editor will be launched and
       - #Use fully qualified domain names. Set to DOMAIN=local if SSL_TYPE=selfsign.
       DOMAIN=omdtz-data.org (added domain name)
@@ -75,8 +92,14 @@ For Web-map, you are needed to prepare the following
       - HTTP_PORT=80
       - HTTPS_PORT=443
   ![Alt text](/app/static/static_figures/server.png?raw=true "Title")
-    - Start installing the server by typing; docker-compose build
-    - The previous task will take time after it is completed start the server by typing; docker-compose up -d
+    - Start installing the server by typing; 
+    ```
+    docker-compose build
+    ```
+    - The previous task will take time after it is completed start the server by typing; 
+    ```
+    - docker-compose up -d
+    ``` 
 - Logging into the server
   - Ensure that you are in the central folder on your server. 
   - Then, type docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-create, substituting your email address as appropriate. Press Enter, and you will be asked for a password for this new account.
