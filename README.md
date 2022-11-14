@@ -144,7 +144,27 @@ sudo apt install -y build-essential libssl-dev libffi-dev python3-setuptools pyt
 ```
 python3 -m venv venv
 source venv/bin/activate
+sudo apt install python3-pip
+pip install werkzeug
+pip install asgiref
+pip install bcrypt
+pip install brotlipy
+pip install certifi
+install werkzeug
+pip install cffi
+pip install chardet
+pip install click
+pip install config
+pip install cycler
+pip install time
+pip install Pillow
+pip install geojson
 pip install wheel
+pip install pandas
+pip install pyparsing
+pip install APScheduler
+pip install matplotlib
+pip install numpy
 pip install flask
 pip install flask-wtf
 pip install requests
