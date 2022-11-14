@@ -140,11 +140,16 @@ ufw disable
  ```
  git clone https://github.com/OMDTZ/MillsMap
  ```
-- 
 - ```cd MillsMap```.
 - You'll need a file called ```secret_tokens.json``` that contains a keys "email" and "password" that contain the username and password for an ODK Central server containing your mill map data.
 - Run the installation script with ```script/setup.sh```.
   - Follow instructions. It needs the domain name, and your email so that LetsEncrypt can inform you when your certificate is expiring.
+
+- Note: 
+  - To Change the odk central server: /app/config.py
+  - To track Submission Files: /app/submission_files
+  - Mills picture: /app/static/figures/
+  - Adding forms to be downloaded: /app/static/form_config.csv
 
 ## How to update the Map  - Using ODK
 Make sure you're using the server linked with webmap during the webmap installation stage 
