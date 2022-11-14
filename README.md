@@ -68,6 +68,7 @@ For Web-map, you are needed to prepare the following
     - #Do not change if using SSL_TYPE=letsencrypt
     - HTTP_PORT=80
     - HTTPS_PORT=443
+![Alt text](/app/static/static_figures/server.png?raw=true "Title")
   - Start installing the server by typing; docker-compose build
   - The previous task will take time after it is completed start the server by typing; docker-compose up -d
 - Logging into the server
