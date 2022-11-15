@@ -47,7 +47,7 @@ For Web-map, you are needed to prepare the following
       - Ns3.digitalocean.com.
 ![Alt text](/app/static/static_figures/Domain_digital ocean.png?raw=true "Title")
       
-***The whole process above can take up to 24 hr to reflect***
+*Sometimes it takes up to 24 hours for domain to reflect*
 
 - Installing Data collection server (ODK central)
   - From your terminal, ssh to the server; you can use the IP address provided and username as root. If the domain has already been reflected you can use it.
