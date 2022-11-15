@@ -27,7 +27,7 @@ For Web-map, you are needed to prepare the following
 ![Alt text](/app/static/static_figures/doplets.png?raw=true "Title")
 
 - Connecting Domain
-  - Buy a domain from your provider eg www.millmaps.org
+  - Buy a domain from your provider such as https://www.namecheap.com/, https://www.godaddy.com/, https://yatosha.com/
   - In digital ocean 
     - Right-click on the 3 dots after the droplets you created
 ![Alt text](/app/static/static_figures/domain.png?raw=true "Title")
