@@ -10,7 +10,21 @@ The map is composed of two main components, which are
 ### Requirements for deploying data collection server
 For server deployment, you are needed to prepare the following 
 - Domain name. In our case, we bought a domain from https://www.namecheap.com/
-- Server for hosting, in our case we used https://cloud.digitalocean.com/ which cost $ 24 /month, and specification of 4GB of Ram / 2 CPUs, 80 GB SSD Disk 4 TB transfer. We also added the external 150GB SSD to support pictures and data hosting but for now we can aim for minimal specifications because we are not expecting a large amount of data to be uploaded.
+- Server for hosting, in our case we used https://cloud.digitalocean.com/ 
+- During data Collection, specifications for the server used was
+      - Ubuntu Docker 19.03.12 on Ubuntu 20.04 
+      - Size 
+        - 2 vCPUs 
+        - RAM 4GB / 80GB Disk
+        - Cost ($28/mo). Additional external 150GB SSD cost ($15/mo)
+      - After data collection, deploying the new server will not require the same server specifications because the traffic is low and amount of data will not be as much as during actual data collection. For this reasons, the specifications will be;
+        - Ubuntu Docker 19.03.12 on Ubuntu 20.04 (version of docker doesn't matter, you can opt for the available higher version)
+        - Size 
+          - 1 vCPU 
+          - RAM 1GB / 25GB Disk
+          - Cost ($6/mo)
+- 
+-  We also added the external 150GB SSD to support pictures and data hosting but for now we can aim for minimal specifications because we are not expecting a large amount of data to be uploaded.
 
 ### Requirements for deploying Web-map
 For Web-map, you are needed to prepare the following 
@@ -28,20 +42,7 @@ For Web-map, you are needed to prepare the following
 - Creating new droplets
   - Creating an account in the digital ocean
   - Launch a droplet; At the very top, under Choose an image, switch to the Marketplace tab and select the Docker option. The docker version does not matter, and the system will run on ubuntu 20.04 or higher. 
-  - Choose the size of droplets; basic, regular with SSD the smallest available option
-    - During data Collection, specifications for the server used was
-      - Ubuntu Docker 19.03.12 on Ubuntu 20.04 
-      - Size 
-        - 2 vCPUs 
-        - RAM 4GB / 80GB Disk
-        - Cost ($28/mo)
-    - After data collection, deploying the new server will not require the same server specifications because the traffic is low and amount of data will not be as much as during actual data collection. For this reasons, the specifications will be;
-      - Ubuntu Docker 19.03.12 on Ubuntu 20.04 (version of docker doesn't matter, you can opt for the available higher version)
-      - Size 
-        - 1 vCPU 
-        - RAM 1GB / 25GB Disk
-        - Cost ($6/mo)
-
+  - Choose the size of droplets; basic, you can refferes to droplets set up
   - Choose Authentication Method; for more security, we recommend ssh but you can also opt password
   - Rename and create the droplets.
 ![Alt text](/app/static/static_figures/doplets.png?raw=true "Title")
