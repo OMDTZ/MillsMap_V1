@@ -12,7 +12,7 @@ For server deployment, you are needed to prepare the following
 - Domain name. In our case, we bought a domain from https://www.namecheap.com/
 - Server for hosting, in our case we used https://cloud.digitalocean.com/ 
 - During data Collection, specifications for the server used was
-      - Ubuntu Docker 19.03.12 on Ubuntu 20.04 
+  - - Ubuntu Docker 19.03.12 on Ubuntu 20.04 
       - Size 
         - 2 vCPUs 
         - RAM 4GB / 80GB Disk
@@ -23,7 +23,6 @@ For server deployment, you are needed to prepare the following
           - 1 vCPU 
           - RAM 1GB / 25GB Disk
           - Cost ($6/mo)
-- 
 -  We also added the external 150GB SSD to support pictures and data hosting but for now we can aim for minimal specifications because we are not expecting a large amount of data to be uploaded.
 
 ### Requirements for deploying Web-map
