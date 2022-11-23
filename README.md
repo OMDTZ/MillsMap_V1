@@ -15,13 +15,22 @@ For server deployment, you are needed to prepare the following
 ### Requirements for deploying Web-map
 For Web-map, you are needed to prepare the following 
 - Domain name, because it uses let’s encrypt for the SSL, you should provide the domain in the very early stage. In our case, we bought a domain from https://www.namecheap.com/
-- Server for hosting, in our case we used https://cloud.digitalocean.com/. With specifications of 1GB RAM / 1CPU and 25 GB SSD Disk. For the local infrastructure, you can create virtual machines.
+- Server for hosting, in our case we used https://cloud.digitalocean.com/. 
+  - Remote server specifications during data collection 1GB RAM / 1CPU and 25 GB SSD Disk. 
+  
 
 ### Steps for deploying Data collection server
 - Creating new droplets
   - Creating an account in the digital ocean
   - Launch a droplet; At the very top, under Choose an image, switch to the Marketplace tab and select the Docker option. The docker version does not matter, and the system will run on ubuntu 20.04 or higher. 
   - Choose the size of droplets; basic, regular with SSD the smallest available option
+    - During data Collection, specifications for the server used was
+      - Ubuntu Docker 19.03.12 on Ubuntu 20.04 
+      - Size 
+        - 2 vCPUs 
+        - RAM 4GB / 80GB Disk
+        - Cost ($28/mo)
+
   - Choose Authentication Method; for more security, we recommend ssh but you can also opt password
   - Rename and create the droplets.
 ![Alt text](/app/static/static_figures/doplets.png?raw=true "Title")
