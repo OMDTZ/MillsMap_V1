@@ -133,7 +133,7 @@ For Web-map, you are needed to prepare the following
   
   - You are done for now, but if you ever lose track of your password, you can always reset it by typing docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-set-password. As with account creation, you will be prompted for a new password after you press Enter.
 
-## For more information about server set up
+### For more information about server set up
 - Set up Server, 
 ODK central used and was deployed in Digital ocean by using the following procedures in this link https://docs.getodk.org/central-install-digital-ocean/ 
 - Creating digital questionnaire, this was done by guidance from this link; https://xlsform.org/en/
@@ -174,12 +174,21 @@ ufw disable
   - Mills picture: /app/static/figures/
   - To add new form: /app/static/form_config.csv
 
-## How to update the Map  - Using ODK
-Make sure you're using the server linked with webmap during the webmap installation stage 
-- Create the digital questionnaire
-- Open ODK-Central server and upload the questionare. Supportive information https://docs.getodk.org/central-forms/
+
+## How to set up survey in data server and updating the map
+### Surveying setting up in data server
+  - Log in to the server
+  - Create the project, by clicking add new button in ODK central.
+![Alt text](/app/static/static_figures/add_project.png?raw=true "Title")
+  - Then add survey forms; in our case, we have Zanzibar_Mills_Mapping_Census_Updating_V_0.11.xlsx for Zanzibar and Tanzania_Mainland_Mills_Mapping_Census_Updating_V_0.12.xlsx for Tanzania mainland
+  - ![Alt text](/app/static/static_figures/add form.png?raw=true "Title")
+  - After adding each form, deploy it make sure all the permission are activated 
+  - Detail supporting Information
+
+### updating  the Map  - Using ODK
+- Make sure you're using the server linked with webmap during the webmap installation stage
 - In Mobile phone, install ODK from playstore then click configure with QR code then scan the provided QR Code from your server
-- Set your identity; Open ODK >setting> user and device  identity>form metadata> type your user name, phone number and email address 
+- Set your identity; Open ODK >setting> user and device  identity>form metadata> type your user-name, phone number and email address 
 - Open Your ODK application and you will find 5 options
   - Fill blank form 
   - Edit saved form 
