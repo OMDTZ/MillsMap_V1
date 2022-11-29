@@ -180,7 +180,7 @@ ufw disable
   - Log in to the server
   - Create the project, by clicking add new button in ODK central.
 ![Alt text](/app/static/static_figures/add_project.png?raw=true "Title")
-  - Then add survey forms; in our case, we have Zanzibar_Mills_Mapping_Census_Updating_V_0.11.xlsx for Zanzibar and Tanzania_Mainland_Mills_Mapping_Census_Updating_V_0.12.xlsx for Tanzania mainland
+  - Then add survey forms; in our case, we have Zanzibar_Mills_Mapping_Census_Updating_V_0.11.xlsx for Zanzibar and Tanzania_Mainland_Mills_Mapping_Census_Updating_V_0.12.xlsx for Tanzania mainland which can be access here https://github.com/OMDTZ/MillsMap/tree/main/sample_forms
 ![Alt text](/app/static/static_figures/add_form.png?raw=true "Title")
   - After adding each form, deploy it make sure all the permission are activated 
   - Detail supporting Information
