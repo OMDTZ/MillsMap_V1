@@ -41,9 +41,9 @@ For Web-map, you are needed to prepare the following
 - Creating new droplets
   - Creating an account in the digital ocean
   - Launch a droplet; At the very top, under Choose an image, switch to the Marketplace tab and select the Docker option. The docker version does not matter, and the system will run on ubuntu 20.04 or higher. 
-  - Choose the size of droplets; basic, you can refferes to droplets set up
-  - Choose Authentication Method; for more security, we recommend ssh but you can also opt password
-  - Rename and create the droplets.
+  - Choose the size of droplets; basicaly you can reffer "Requirements for deploying data collection server"
+  - Choose Authentication Method; for more security, we recommend ssh but you can also opt to password
+  - Create and rename the droplets.
 ![Alt text](/app/static/static_figures/doplets.png?raw=true "Title")
 
 - Connecting Domain
@@ -59,8 +59,8 @@ For Web-map, you are needed to prepare the following
         - Ns2.digitalocean.com.
         - Ns3.digitalocean.com.
 ![Alt text](/app/static/static_figures/domain-ocean.png?raw=true "Title")
-  - From Domain name service provides. I.e Namecheap
-    - Click manage, on the right or the domain you just bought
+  - From Domain name service providers. i.e Namecheap
+    - Click manage, on the right of the domain you just bought
     - Navigate to name servers, change the section to custom DNS then add all the nameservers copied from the digital ocean which are 
       - Ns1.digitalocean.com. 
       - Ns2.digitalocean.com.
@@ -78,7 +78,7 @@ For Web-map, you are needed to prepare the following
     sudo chmod +x /usr/local/bin/docker-compose
     sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     ```
-  - Start up the docker by run 
+  - Start up the docker by running
   ```
   systemctl enable docker
   ```
@@ -86,7 +86,7 @@ For Web-map, you are needed to prepare the following
   ```
   ufw disable 
   ```
-   and you it will prompt "Firewall stopped and disabled on system startup"
+   and it will prompt "Firewall stopped and disabled on system startup"
   - Download the application; 
   ```
   git clone https://github.com/getodk/central
@@ -100,7 +100,7 @@ For Web-map, you are needed to prepare the following
   ```
   mv .env.template .env
   ```
-  - The edit the file and add domain and emails as follows
+  - Then edit the file and add domain and emails as follows
     - Type nano .env the text editor will be launched and
       - #Use fully qualified domain names. Set to DOMAIN=local if SSL_TYPE=selfsign.
       DOMAIN=omdtz-data.org (added domain name)
@@ -120,7 +120,7 @@ For Web-map, you are needed to prepare the following
     ```
     docker-compose up -d
     ``` 
-- Logging into the server and adding user
+- Logging into the server and adding user(s)
   - Ensure that you are in the central folder on your server. 
   - Adding users ( Substituting your email address as appropriate. Press Enter, and you will be asked for a password for this new account.)
   ```
@@ -131,12 +131,15 @@ For Web-map, you are needed to prepare the following
   docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-promote
   ```
   
-  - You are done for now, but if you ever lose track of your password, you can always reset it by typing docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-set-password. As with account creation, you will be prompted for a new password after you press Enter.
+  - You are done for now, but if you ever lose track of your password, you can always reset it by typing 
+  ```
+  - docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-set-password
+  ```
+  - As with account creation, you will be prompted for a new password after you press Enter.
 
-### For more information about server set up
-- Set up Server, 
-ODK central used and was deployed in Digital ocean by using the following procedures in this link https://docs.getodk.org/central-install-digital-ocean/ 
-- Creating digital questionnaire, this was done by guidance from this link; https://xlsform.org/en/
+### For more information
+- Set up Server; https://docs.getodk.org/central-install-digital-ocean/ 
+- Creating ODK questionnaire; https://xlsform.org/en/
 
 
 ## Web map installation
@@ -161,7 +164,7 @@ ufw disable
  git clone https://github.com/OMDTZ/MillsMap
  ```
 - ```cd MillsMap```.
-- You'll need a file called ```secret_tokens.json``` that contains a keys "email" and "password" that contain the username and password for an ODK Central server containing your mill map data.
+- You'll need a file called ```secret_tokens.json``` that contains "username" and "password" for an ODK Central server containing your mill map data.
 - Run the installation script with 
   ```
   script/setup.sh
