@@ -1,6 +1,6 @@
 # Tanzania Nationwide Mills Census - Webmap
 
-This repo queries odk central server and updates a webmap automatically. Currently specific to a project in Tanzania funded by The World Food Programme (WFP) and conducted by OpenMap Development Tanzania (OMDTZ).
+This repo queries odk central server and updates a webmap automatically. Currently specific to a project in Tanzania funded by The World Food Programme (WFP) and executed by OpenMap Development Tanzania (OMDTZ).
 
 ## Infrastructure set-up
 The map is composed of two main components, which are 
@@ -17,17 +17,17 @@ For server deployment, you are needed to prepare the following
       - 2 vCPUs 
       - RAM 4GB / 80GB Disk
       - Cost ($28/mo). Additional external 150GB SSD cost ($15/mo)
-  - After data collection, deploying the new server will not require the same server specifications because the traffic will be low and amount of data will not be as much as during actual data collection. For this reasons, the specifications will be;
-    - Ubuntu Docker 19.03.12 on Ubuntu 20.04 (version of docker doesn't matter, you can opt for the available higher version)
-    - Size 
-      - 1 vCPU 
-      - RAM 1GB / 25GB Disk
-      - Cost ($6/mo)
+- After data collection, deploying the new server will not require the same server specifications because the traffic will be low and amount of data will not be as much as during actual data collection. For this reasons, the specifications will be;
+   - Ubuntu Docker 19.03.12 on Ubuntu 20.04 (version of docker doesn't matter, you can opt for the available higher version)
+     - Size 
+       - 1 vCPU 
+       - RAM 1GB / 25GB Disk
+       - Cost ($6/mo)
 -  We also added the external 150GB SSD to support pictures and data hosting but for now we can aim for minimal specifications because we are not expecting a large amount of data to be uploaded.
 
 ### Requirements for deploying web-map
 For Web-map, you are needed to prepare the following 
-- Domain name, because it uses let’s encrypt for the SSL, you should provide the domain in the very early stage. In our case, we bought a domain from https://www.namecheap.com/
+- Domain name, because it uses "let’s encrypt" for the SSL, you should provide the domain in the very early stage. In our case, we bought a domain from https://www.namecheap.com/
 - Server for hosting, in our case we used https://cloud.digitalocean.com/. 
   - Specifications for the 
     - Image Ubuntu 20.04 (LTS) x64 
