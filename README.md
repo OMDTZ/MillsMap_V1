@@ -17,7 +17,7 @@ For server deployment, you are needed to prepare the following
       - 2 vCPUs 
       - RAM 4GB / 80GB Disk
       - Cost ($28/mo). Additional external 150GB SSD cost ($15/mo)
-  - After data collection, deploying the new server will not require the same server specifications because the traffic is low and amount of data will not be as much as during actual data collection. For this reasons, the specifications will be;
+  - After data collection, deploying the new server will not require the same server specifications because the traffic will be low and amount of data will not be as much as during actual data collection. For this reasons, the specifications will be;
     - Ubuntu Docker 19.03.12 on Ubuntu 20.04 (version of docker doesn't matter, you can opt for the available higher version)
     - Size 
       - 1 vCPU 
@@ -25,7 +25,7 @@ For server deployment, you are needed to prepare the following
       - Cost ($6/mo)
 -  We also added the external 150GB SSD to support pictures and data hosting but for now we can aim for minimal specifications because we are not expecting a large amount of data to be uploaded.
 
-### Requirements for deploying Web-map
+### Requirements for deploying web-map
 For Web-map, you are needed to prepare the following 
 - Domain name, because it uses let’s encrypt for the SSL, you should provide the domain in the very early stage. In our case, we bought a domain from https://www.namecheap.com/
 - Server for hosting, in our case we used https://cloud.digitalocean.com/. 
@@ -37,7 +37,7 @@ For Web-map, you are needed to prepare the following
       - Cost ($6/mo)
   
 
-### Steps for deploying Data collection server
+### Steps for deploying data collection server
 - Creating new droplets
   - Creating an account in the digital ocean
   - Launch a droplet; At the very top, under Choose an image, switch to the Marketplace tab and select the Docker option. The docker version does not matter, and the system will run on ubuntu 20.04 or higher. 
@@ -139,7 +139,7 @@ ODK central used and was deployed in Digital ocean by using the following proced
 - Creating digital questionnaire, this was done by guidance from this link; https://xlsform.org/en/
 
 
-## Web Map installation
+## Web map installation
 
 ### Cloud deployment
 - Create a Digital Ocean droplet (or other server on whatever infrastructure you prefer), and associate a domain name with it. Either disable the UFW firewall or poke the appropriate holes in it for nginx and ssh.
