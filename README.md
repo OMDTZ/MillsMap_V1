@@ -169,7 +169,7 @@ ufw disable
   ```
   script/setup.sh
   ```
-  - Follow instructions. It needs the domain name, and your email so that LetsEncrypt can inform you when your certificate is expiring.
+  - Follow instructions. It needs the domain name, and your email so that "Let's Encrypt" can inform you when your certificate is expiring.
 
 - Note: 
   - To change an odk central server: /app/config.py
@@ -183,12 +183,13 @@ ufw disable
   - Log in to the server
   - Create the project, by clicking add new button in ODK central.
 ![Alt text](/app/static/static_figures/add_project.png?raw=true "Title")
+
   - Then add survey forms; in our case, we have Zanzibar_Mills_Mapping_Census_Updating_V_0.11.xlsx for Zanzibar and Tanzania_Mainland_Mills_Mapping_Census_Updating_V_0.12.xlsx for Tanzania mainland which can be access here https://github.com/OMDTZ/MillsMap/tree/main/sample_forms
 ![Alt text](/app/static/static_figures/add_form.png?raw=true "Title")
-  - After adding each form, deploy it make sure all the permission are activated 
-  - Detail supporting Information
+  - After adding each form, deploy them and make sure all the permissions are activated 
+  
 
-### updating  the Map  - Using ODK
+### Updating the Map  - Using ODK
 - Make sure you're using the server linked with webmap during the webmap installation stage
 - In Mobile phone, install ODK from playstore then click configure with QR code then scan the provided QR Code from your server
 - Set your identity; Open ODK >setting> user and device  identity>form metadata> type your user-name, phone number and email address 
@@ -199,6 +200,6 @@ ufw disable
   - View sent form 
   - Delete saved form
 - In “Fill blank form”, you will find the deployed form, select and fill the information. 
-- NB Please make sure you turn on location, to do so go to setting on your android then turn on LOCATION.After that fill information. 
+- NB Please make sure you turn on location, to do so, go to setting on your android then turn on LOCATION.After that fill information. 
 Then use the “Send finalized form” option, select all the forms and send them
 #### For more detailed information, you can visit this site https://docs.getodk.org/getting-started/
