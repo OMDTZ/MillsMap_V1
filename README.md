@@ -133,7 +133,7 @@ For Web-map, you are needed to prepare the following
   
   - You are done for now, but if you ever lose track of your password, you can always reset it by typing 
   ```
-  - docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-set-password
+  docker-compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-set-password
   ```
   - As with account creation, you will be prompted for a new password after you press Enter.
 
